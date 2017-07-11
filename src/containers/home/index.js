@@ -8,13 +8,14 @@ import {
   decrement,
   decrementAsync
 } from "../../modules/counter";
+import "./home.css";
 
 const Home = props =>
-  <div>
-    <h1>Home</h1>
-    <p>
+  <div className="background">
+    {/*<h1>Home</h1>*/}
+    {/*<p>
       Count: {props.count}
-    </p>
+    </p>*/}
 
     <p>
       <button onClick={props.increment} disabled={props.isIncrementing}>
@@ -54,7 +55,7 @@ const mapDispatchToProps = dispatch =>
       incrementAsync,
       decrement,
       decrementAsync,
-      changePage: () => push("/about-us")
+      changePage: () => push("/about")
     },
     dispatch
   );
