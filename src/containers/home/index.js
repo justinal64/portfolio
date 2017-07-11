@@ -9,55 +9,33 @@ import {
   decrementAsync
 } from "../../modules/counter";
 import "./home.css";
+import { Article, Section, Headline } from "grommet/components/Article";
 
-const Home = props =>
-  <div className="background">
-    {/*<h1>Home</h1>*/}
-    {/*<p>
-      Count: {props.count}
-    </p>*/}
+class Home extends React.Component {
+  //   static propTypes = {
+  //     news: PropTypes.arrayOf(
+  //       PropTypes.shape({
+  //         title: PropTypes.string.isRequired,
+  //         link: PropTypes.string.isRequired,
+  //         content: PropTypes.string,
+  //       }),
+  //     ).isRequired,
+  //   };
 
-    <p>
-      <button onClick={props.increment} disabled={props.isIncrementing}>
-        Increment
-      </button>
-      <button onClick={props.incrementAsync} disabled={props.isIncrementing}>
-        Increment Async
-      </button>
-    </p>
+  render() {
+    return (
+      <div>
+        <div>
+          <h1>React.js New</h1>
+          {/* <Starwars />*/}
+          {/* <p>This is my homepage</p>*/}
+          <div>
+            {/* <img className={s.pacmanBG} src={Pacman} alt="pacman is awesome"/>*/}
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
 
-    <p>
-      <button onClick={props.decrement} disabled={props.isDecrementing}>
-        Decrementing
-      </button>
-      <button onClick={props.decrementAsync} disabled={props.isDecrementing}>
-        Decrement Async
-      </button>
-    </p>
-
-    <p>
-      <button onClick={() => props.changePage()}>
-        Go to about page via redux
-      </button>
-    </p>
-  </div>;
-
-const mapStateToProps = state => ({
-  count: state.counter.count,
-  isIncrementing: state.counter.isIncrementing,
-  isDecrementing: state.counter.isDecrementing
-});
-
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(
-    {
-      increment,
-      incrementAsync,
-      decrement,
-      decrementAsync,
-      changePage: () => push("/about")
-    },
-    dispatch
-  );
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default Home;
