@@ -8,38 +8,40 @@ import {
   decrement,
   decrementAsync
 } from "../../modules/counter";
+import { Article, Section, Headline } from "grommet/components/Article";
 import "./home.css";
 
 const Home = props =>
   <div className="background">
-    {/*<h1>Home</h1>*/}
-    {/*<p>
-      Count: {props.count}
-    </p>*/}
-
-    <p>
-      <button onClick={props.increment} disabled={props.isIncrementing}>
-        Increment
-      </button>
-      <button onClick={props.incrementAsync} disabled={props.isIncrementing}>
-        Increment Async
-      </button>
-    </p>
-
-    <p>
-      <button onClick={props.decrement} disabled={props.isDecrementing}>
-        Decrementing
-      </button>
-      <button onClick={props.decrementAsync} disabled={props.isDecrementing}>
-        Decrement Async
-      </button>
-    </p>
-
-    <p>
-      <button onClick={() => props.changePage()}>
-        Go to about page via redux
-      </button>
-    </p>
+    <Article scrollStep={true}>
+      <Section pad="large" justify="center" align="center" full="vertical">
+        <Headline margin="none">Section 1</Headline>
+      </Section>
+      <Section
+        pad="large"
+        justify="center"
+        align="center"
+        full="vertical"
+        colorIndex="grey-4"
+      >
+        <Headline margin="none">Section 2</Headline>
+      </Section>
+      <Section pad="large" justify="center" align="center" full="vertical">
+        <Headline margin="none">Section 3</Headline>
+      </Section>
+      <Section
+        pad="large"
+        justify="center"
+        align="center"
+        full="vertical"
+        colorIndex="grey-4"
+      >
+        <Headline margin="none">Section 4</Headline>
+      </Section>
+      <Section pad="large" justify="center" align="center" full="vertical">
+        <Headline margin="none">Section 5</Headline>
+      </Section>
+    </Article>
   </div>;
 
 const mapStateToProps = state => ({
